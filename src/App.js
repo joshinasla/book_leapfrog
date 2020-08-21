@@ -4,6 +4,7 @@ import DisplayBook from "./pages/DisplayBook";
 import SearchBook from "./pages/SearchBook";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import DisplayList from "./components/DisplayList";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/displaybooks" component={DisplayBook}></Route>
+            <Route exact path="/display" component={DisplayBook}></Route>
             <Route exact path="/search" component={SearchBook}></Route>
+            <Route exact path="/list" component={DisplayList}></Route>
           </Switch>
         </BrowserRouter>
       </Provider>

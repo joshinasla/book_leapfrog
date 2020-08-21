@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import store from "../redux/store";
-class DisplaySingle extends Component {
+import { connect } from "react-redux";
+class DisplayList extends Component {
   constructor(props) {
     super(props);
 
@@ -10,15 +11,16 @@ class DisplaySingle extends Component {
   }
 
   componentDidMount() {
-    const state = store.getState();
-    const bookDetailsUrl = `https://www.googleapis.com/books/v1/volumes?q=${state}`;
+    const book = this.props.book;
+    console.log(book);
+    const bookDetailsUrl = `https://www.googleapis.com/books/v1/volumes?q=${book}`;
     fetch(bookDetailsUrl)
       .then((res) => {
         console.log({ res });
         return res.json();
       })
       .then((bookDetails) => {
-        console.log({ bookDetails });
+        console.log("hi", { bookDetails });
         this.setState({
           bookDetails: bookDetails,
         });
@@ -27,12 +29,18 @@ class DisplaySingle extends Component {
   render() {
     return (
       <div>
-        {/* {bookDetails.map((bookDetails) => (
+        {bookDetails.map((book) => (
           <div>{this.state.bookDetails.id}</div>
-        ))} */}
+        ))}
       </div>
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    book: state.book,
+  };
+};
+const ReduxDisplayList = connect(mapStateToProps)(DisplayList);
 
-export default DisplaySingle;
+export default ReduxDisplayList;

@@ -4,3 +4,4 @@ export const searchItem = (book) => {
     payload: book,
   };
 };
+export default { searchItem };

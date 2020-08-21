@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
 import { searchItem } from "../redux/action";
-import DisplaySingle from "../components/DisplaySingle";
-
+import { Link } from "react-router-dom";
+import DisplayList from "../components/DisplayList";
+import "./SearchBook.css";
 class SearchBook extends Component {
   constructor(props) {
     super(props);
@@ -21,6 +22,7 @@ class SearchBook extends Component {
     e.preventDefault();
     const searchBook = this.state.book;
     this.props.sendItem(searchBook);
+
     this.setState({
       book: "",
     });
@@ -29,17 +31,20 @@ class SearchBook extends Component {
     return (
       <div>
         <form className="searchform" onSubmit={this.addSearch}>
-          <input
-            className="searchbox"
-            type="text"
-            value={this.state.book}
-            onChange={this.handleChange}
-          />
-          <button className="addBtn" type="submit">
-            <Link exact path="/display" component={DisplaySingle}>
-              SEARCH
+          <div className="searchBox">
+            <input
+              className="searchbox"
+              type="text"
+              value={this.state.book}
+              onChange={this.handleChange}
+              placeholder="Search..."
+            />
+            <Link to="/list">
+              <button className="addBtn" type="submit">
+                <FaSearch />
+              </button>
             </Link>
-          </button>
+          </div>
         </form>
       </div>
     );
