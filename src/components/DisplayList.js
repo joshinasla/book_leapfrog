@@ -49,8 +49,14 @@
 import React from "react";
 
 function DisplayList(props) {
-  console.log(props.bookDetails);
-  return <div></div>;
+  console.log("he", props.bookDetails);
+  return (
+    <div>
+      {/* {props.bookDetails.map((bookDetails) => {
+        return <div>{bookDetails.id}</div>;
+      })} */}
+    </div>
+  );
 }
 
 export default DisplayList;

@@ -12,7 +12,7 @@ class SearchBook extends Component {
 
     this.state = {
       books: [],
-      searchField: "",
+      searchField: "hi",
     };
   }
 
@@ -31,7 +31,6 @@ class SearchBook extends Component {
   //   });
   // };
   handleSearch = (e) => {
-    console.log(e.target.value);
     this.setState({ searchField: e.target.value });
   };
   searchBook = (e) => {
@@ -45,12 +44,12 @@ class SearchBook extends Component {
       .then((bookDetails) => {
         console.log("hi", { bookDetails });
         this.setState({
-          bookDetails: bookDetails,
+          bookDetails: bookDetails.items,
         });
-        console.log(bookDetails);
       });
   };
   render() {
+    console.log("this", this.state.bookDetails);
     return (
       <div>
         {/* <form className="searchform" onSubmit={this.addSearch}>
@@ -73,7 +72,9 @@ class SearchBook extends Component {
           searchBook={this.searchBook}
           handleSearch={this.handleSearch}
         />
-        <DisplayList bookDetails={this.bookDetails} />
+        <div>
+          <DisplayList bookDetails={this.state.bookDetails} />
+        </div>
       </div>
     );
   }
