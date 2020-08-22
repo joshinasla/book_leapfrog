@@ -50,11 +50,20 @@ import React from "react";
 
 function DisplayList(props) {
   console.log("he", props.bookDetails);
+  const books = props.bookDetails;
   return (
     <div>
       {/* {props.bookDetails.map((bookDetails) => {
         return <div>{bookDetails.id}</div>;
       })} */}
+      {books.map((book) => {
+        return (
+          <div>
+            <p>{book.id}</p>
+            <p>{book.volumeInfo.title}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -11,8 +11,9 @@ class SearchBook extends Component {
     super(props);
 
     this.state = {
-      books: [],
+      bookDetails: [],
       searchField: "hi",
+      flag: false,
     };
   }
 
@@ -45,6 +46,7 @@ class SearchBook extends Component {
         console.log("hi", { bookDetails });
         this.setState({
           bookDetails: bookDetails.items,
+          flag: true,
         });
       });
   };
@@ -73,7 +75,9 @@ class SearchBook extends Component {
           handleSearch={this.handleSearch}
         />
         <div>
-          <DisplayList bookDetails={this.state.bookDetails} />
+          {this.state.flag && (
+            <DisplayList bookDetails={this.state.bookDetails} />
+          )}
         </div>
       </div>
     );
