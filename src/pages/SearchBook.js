@@ -36,7 +36,7 @@ class SearchBook extends Component {
   };
   searchBook = (e) => {
     e.preventDefault();
-    const bookDetailsUrl = `https://www.googleapis.com/books/v1/volumes?q=${this.state.searchField}`;
+    const bookDetailsUrl = `https://www.googleapis.com/books/v1/volumes?q=${this.state.searchField}&maxResults=2`;
     fetch(bookDetailsUrl)
       .then((res) => {
         console.log({ res });
@@ -48,6 +48,7 @@ class SearchBook extends Component {
           bookDetails: bookDetails.items,
           flag: true,
         });
+        this.props.sendItem(bookDetails);
       });
   };
   render() {
@@ -74,7 +75,12 @@ class SearchBook extends Component {
           searchBook={this.searchBook}
           handleSearch={this.handleSearch}
         />
-        <div>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div className="display-list">
           {this.state.flag && (
             <DisplayList bookDetails={this.state.bookDetails} />
           )}

@@ -1,0 +1,63 @@
+.container {
+  width: 1000px;
+  left: 50%;
+  height: 400px;
+  background-color: #8f91a2;
+  margin: 20px;
+  margin-left: 200px;
+}
+.header {
+  display: inline;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+.cover {
+  padding: 10px;
+}
+.img-box {
+  float: left;
+}
+.content {
+  font-size: 18px;
+  font-weight: bold;
+  float: right;
+}
+.title {
+}
+.author {
+  font-weight: 600;
+}
+a {
+  text-decoration: none;
+}
+
+.popover-title {
+  float: none;
+  line-height: 20px;
+  text-decoration: none;
+
+  padding: 15px 0;
+}
+.popover-wrapper {
+  display: inline-block;
+}
+.popover-content {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  width: auto;
+  transition: left 400ms ease-out, top 250ms ease-in;
+}
+
+.popover-wrapper:hover .popover-content {
+  opacity: 1;
+  visibility: visible;
+}

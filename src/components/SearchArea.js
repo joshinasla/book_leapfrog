@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 
 function SearchArea(props) {
   return (
-    <div>
+    <div className="search-area">
       <form onSubmit={props.searchBook}>
         <div className="searchBox">
           <input

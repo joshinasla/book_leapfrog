@@ -1,66 +1,40 @@
-// import React, { Component } from "react";
-// import store from "../redux/store";
-// import { connect } from "react-redux";
-// class DisplayList extends Component {
-//   constructor(props) {
-//     super(props);
-
-//     this.state = {
-//       bookDetails: "",
-//     };
-//   }
-
-//   // componentDidMount() {
-//   //   const book = this.props.book;
-//   //   console.log(book);
-//   //   const bookDetailsUrl = `https://www.googleapis.com/books/v1/volumes?q=${book}`;
-//   //   fetch(bookDetailsUrl)
-//   //     .then((res) => {
-//   //       console.log({ res });
-//   //       return res.json();
-//   //     })
-//   //     .then((bookDetails) => {
-//   //       console.log("hi", { bookDetails });
-//   //       this.setState({
-//   //         bookDetails: bookDetails,
-//   //       });
-//   //       console.log(bookDetails);
-//   //     });
-//   // }
-//   render() {
-//     // console.log(this.bookDetails);
-//     return (
-//       <div>
-//         {/* {this.bookDetails.map((bookDetails) => (
-//           <div>{bookDetails.id}</div>
-//         ))} */}
-//       </div>
-//     );
-//   }
-// }
-// const mapStateToProps = (state) => {
-//   return {
-//     book: state.book,
-//   };
-// };
-// const ReduxDisplayList = connect(mapStateToProps)(DisplayList);
-
-// export default ReduxDisplayList;
 import React from "react";
+
+import "./DisplayList.css";
+import content from "./content.jpg";
 
 function DisplayList(props) {
   console.log("he", props.bookDetails);
   const books = props.bookDetails;
   return (
-    <div>
-      {/* {props.bookDetails.map((bookDetails) => {
-        return <div>{bookDetails.id}</div>;
-      })} */}
+    <div className="wrapper">
       {books.map((book) => {
         return (
-          <div>
-            <p>{book.id}</p>
-            <p>{book.volumeInfo.title}</p>
+          <div className="container">
+            <div className="cover ">
+              <div className="clearfix header">
+                <div className="img-box">
+                  <img src={content} alt="book"></img>
+                </div>
+                <div className="content">
+                  <p className="title">{book.volumeInfo.title}</p>
+                  <p className="author">{book.volumeInfo.authors}</p>
+                </div>
+              </div>
+              <div className="popover-wrapper">
+                <a href="#">
+                  <h5 className="popover-title">Description</h5>
+                </a>
+                <div className="popover-content">
+                  <p className="popover-description">
+                    {book.volumeInfo.description}
+                  </p>
+                </div>
+              </div>
+              <div>
+                <button>My Book</button>
+              </div>
+            </div>
           </div>
         );
       })}
