@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { searchItem } from "../../redux/action";
-import DisplayList from "../../components/DisplayList";
+import DisplayList from "../../components/DisplayList/DisplayList";
 import SearchArea from "../../components/SearchArea";
 import "./SearchBook.css";
 import { Link } from "react-router-dom";

@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 
-import SearchBook from "../SearchBook/SearchBook";
-import NavBar from "../../components/NavBar/NavBar";
-import DisplayList from "../../components/DisplayList";
-import "./DisplayBook.css";
-
-export class DisplayBook extends Component {
+export class StaticDisplay extends Component {
   constructor(props) {
     super(props);
 
@@ -37,13 +32,7 @@ export class DisplayBook extends Component {
   }
   render() {
     return (
-      <div className="main-wrapper clearfix">
-        <div className="nav-bar-wrapper">
-          <NavBar />
-        </div>
-        <div className="search-wrapper">
-          <SearchBook />
-        </div>
+      <div>
         <div className="container-main">
           {this.state.list.map((list) => (
             <div className="container">
@@ -68,10 +57,9 @@ export class DisplayBook extends Component {
             </div>
           ))}
         </div>
-        {/* <DisplayList bookDetails={this.state.list} /> */}
       </div>
     );
   }
 }
 
-export default DisplayBook;
+export default StaticDisplay;

@@ -72,11 +72,9 @@
   float: none;
   line-height: 20px;
   text-decoration: none;
-
-  padding: 15px 0;
 }
 .popover-wrapper {
-  display: inline-block;
+  float: left;
 }
 .popover-content {
   position: absolute;
@@ -100,4 +98,11 @@
 .description {
   text-decoration: none;
   color: white;
+}
+a {
+  text-decoration: none;
+}
+
+.see-more-text {
+  float: right;
 }

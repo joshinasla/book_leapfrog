@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import BookItem from "./BookItem";
-import "./BookItem.css";
+import BookItem from "./BookItem/BookItem";
+import "./BookItem/BookItem.css";
 
 class ListBook extends Component {
   item = this.props.items;

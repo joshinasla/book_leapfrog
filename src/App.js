@@ -3,9 +3,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import store from "./redux/store";
-import DisplayBook from "./pages/DisplayBook/DisplayBook";
+import DisplayBook from "./pages/HomePage/HomePage";
 import SearchBook from "./pages/SearchBook/SearchBook";
-import DisplayList from "./components/DisplayList";
+import DisplayList from "./components/DisplayList/DisplayList";
 import MyBooks from "./pages/MyBooks/MyBooks";
 
 function App() {
