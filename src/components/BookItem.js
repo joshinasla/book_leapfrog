@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class BookItem extends Component {
+class BookItem extends Component {
   render() {
     return (
       <li id={this.props.id}>

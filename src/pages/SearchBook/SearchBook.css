@@ -1,6 +1,6 @@
 .searchBox {
   position: absolute;
-  left: 50%;
+  left: 85%;
   transform: translate(-50%, 50%);
   background: #2f3640;
   height: 40px;
@@ -8,7 +8,7 @@
   padding: 10px;
 }
 .searchBox:hover > .searchbox {
-  width: 240px;
+  width: 140px;
   padding: 0 6px;
 }
 

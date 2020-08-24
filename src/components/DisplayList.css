@@ -41,20 +41,29 @@
 .title {
   width: 150px;
   text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .author {
   font-weight: 600;
   width: 100px;
   text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .categories {
-  max-width: 100px;
-  display: inline;
+  width: 100px;
+
   background-color: #58a4b0;
   border-radius: 10px;
   padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-a {
+.pop-title {
   text-decoration: none;
   color: #dcedff;
 }
@@ -79,6 +88,8 @@ a {
   background: black;
   padding: 10px;
   text-align: justify;
+  overflow: auto;
+  height: 100px;
 }
 
 .popover-wrapper:hover .popover-content {

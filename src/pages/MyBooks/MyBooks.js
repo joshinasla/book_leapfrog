@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import ListBook from "../components/ListBook";
+import ListBook from "../../components/ListBook";
 
 export class MyBooks extends Component {
   constructor(props) {

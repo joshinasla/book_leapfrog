@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+import SearchBook from "../SearchBook/SearchBook";
+import NavBar from "../../components/NavBar/NavBar";
+import "./DisplayBook.css";
+
 export class DisplayBook extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +20,7 @@ export class DisplayBook extends Component {
       headers: {
         "x-rapidapi-host": "google-books.p.rapidapi.com",
         "x-rapidapi-key": "f0f6e3806dbmsh32cb152e5e4ffe7p11e34ajsna1633c3a6b6e",
-        "Access-Control-Allow-Origin": "*",
+        // "Access-Control-Allow-Origin": "*",
       },
     })
       .then((res) => {
@@ -30,10 +34,13 @@ export class DisplayBook extends Component {
   }
   render() {
     return (
-      <div>
-        {this.state.list.map((list) => (
-          <div>{list.id}</div>
-        ))}
+      <div className="main-wrapper clearfix">
+        <div className="nav-bar-wrapper">
+          <NavBar />
+        </div>
+        <div className="search-wrapper">
+          <SearchBook />
+        </div>
       </div>
     );
   }

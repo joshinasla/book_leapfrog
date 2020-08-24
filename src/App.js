@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import DisplayBook from "./pages/DisplayBook";
-import SearchBook from "./pages/SearchBook";
 import { Provider } from "react-redux";
+
 import store from "./redux/store";
+import DisplayBook from "./pages/DisplayBook/DisplayBook";
+import SearchBook from "./pages/SearchBook/SearchBook";
 import DisplayList from "./components/DisplayList";
-import MyBooks from "./pages/MyBooks";
+import MyBooks from "./pages/MyBooks/MyBooks";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/display" component={DisplayBook}></Route>
+            <Route exact path="/" component={DisplayBook}></Route>
             <Route exact path="/search" component={SearchBook}></Route>
             <Route exact path="/list" component={DisplayList}></Route>
             <Route exact path="/mybook" component={MyBooks}></Route>

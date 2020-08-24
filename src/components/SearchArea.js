@@ -1,7 +1,7 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 
-import "../pages/SearchBook.css";
+import "../pages/SearchBook/SearchBook.css";
 
 function SearchArea(props) {
   return (

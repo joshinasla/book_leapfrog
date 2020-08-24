@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { searchItem } from "../redux/action";
-import DisplayList from "../components/DisplayList";
+import { searchItem } from "../../redux/action";
+import DisplayList from "../../components/DisplayList";
+import SearchArea from "../../components/SearchArea";
 import "./SearchBook.css";
-import SearchArea from "../components/SearchArea";
 
 class SearchBook extends Component {
   constructor(props) {
