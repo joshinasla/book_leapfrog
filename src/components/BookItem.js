@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 
+import "./BookItem.css";
+
 class BookItem extends Component {
   render() {
     return (
-      <li id={this.props.id}>
-        <div className="itemPresentation">
+      <li id={this.props.id} className="list-book">
+        <div className="container">
           <h2>{this.props.book}</h2>
           <p>{this.props.author}</p>
         </div>

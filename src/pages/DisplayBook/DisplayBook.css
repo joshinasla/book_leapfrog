@@ -16,3 +16,11 @@
 .search-wrapper {
   float: right;
 }
+.container-main {
+  margin-top: 10%;
+  display: grid;
+  justify-content: center;
+}
+.content-text {
+  color: white;
+}

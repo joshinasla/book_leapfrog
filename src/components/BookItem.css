@@ -1,0 +1,12 @@
+li {
+  list-style: none;
+}
+
+.list-book {
+  display: flex;
+  justify-content: center;
+}
+
+.title-my-book {
+  text-align: center;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-
+import { bindActionCreators } from "redux";
 import { updateBookShelf } from "../redux/action";
 import "./DisplayList.css";
 
@@ -31,7 +31,7 @@ function DisplayList(props) {
               </div>
 
               <div className="popover-wrapper">
-                <a href="#" className="pop-title">
+                <a href="#" className="description">
                   <h5 className="popover-title">Description</h5>
                 </a>
                 <div className="popover-content">
@@ -41,9 +41,7 @@ function DisplayList(props) {
                 </div>
               </div>
               <div>
-                <button
-                  onClick={() => updateBookShelf(book.id, (book_flag = true))}
-                >
+                <button onClick={updateBookShelf(book.id, (book_flag = true))}>
                   My Book
                 </button>
               </div>
@@ -56,9 +54,12 @@ function DisplayList(props) {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  console.log("dispatch");
   return {
-    updateBookShelf: (id) => dispatch(updateBookShelf),
+    actions: bindActionCreators(
+      { updateBookShelf },
+      dispatch,
+      console.log("dispatchhi")
+    ),
   };
 };
 const ReduxDisplayList = connect(null, mapDispatchToProps)(DisplayList);

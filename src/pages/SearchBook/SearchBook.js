@@ -5,6 +5,7 @@ import { searchItem } from "../../redux/action";
 import DisplayList from "../../components/DisplayList";
 import SearchArea from "../../components/SearchArea";
 import "./SearchBook.css";
+import { Link } from "react-router-dom";
 
 class SearchBook extends Component {
   constructor(props) {
@@ -71,6 +72,7 @@ class SearchBook extends Component {
             </Link>
           </div>
         </form> */}
+
         <SearchArea
           searchBook={this.searchBook}
           handleSearch={this.handleSearch}

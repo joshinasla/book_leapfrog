@@ -1,6 +1,6 @@
 const initialState = {
   value: "",
-  id: [],
+  id: "",
 };
 const myReducer = (state = initialState, action) => {
   switch (action.type) {

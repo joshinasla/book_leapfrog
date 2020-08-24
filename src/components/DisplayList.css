@@ -96,3 +96,8 @@
   opacity: 1;
   visibility: visible;
 }
+
+.description {
+  text-decoration: none;
+  color: white;
+}

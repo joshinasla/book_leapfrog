@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 
 import BookItem from "./BookItem";
+import "./BookItem.css";
 
 class ListBook extends Component {
   item = this.props.items;
   render() {
     return (
       <div>
-        <h1>Your Book List</h1>
+        <h1 className="title-my-book">Your Book List</h1>
         <ul>
           {this.item.map((i) => {
             return (
