@@ -1,14 +1,23 @@
+.wrapper {
+  display: flex;
+}
 .container {
-  width: 1000px;
+  width: 300px;
   left: 50%;
-  height: 400px;
-  background-color: #8f91a2;
+  max-height: 400px;
+  background-color: #1b1b1e;
+  color: #d8dbe2;
   margin: 20px;
-  margin-left: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.container:hover {
+  box-shadow: 0 8px 16px 0 rgba(194, 169, 68, 1);
 }
 .header {
   display: inline;
 }
+
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -30,12 +39,24 @@
   float: right;
 }
 .title {
+  width: 150px;
+  text-align: left;
 }
 .author {
   font-weight: 600;
+  width: 100px;
+  text-align: left;
+}
+.categories {
+  max-width: 100px;
+  display: inline;
+  background-color: #58a4b0;
+  border-radius: 10px;
+  padding: 5px;
 }
 a {
   text-decoration: none;
+  color: #dcedff;
 }
 
 .popover-title {
@@ -53,8 +74,11 @@ a {
   z-index: 1;
   opacity: 0;
   visibility: hidden;
-  width: auto;
-  transition: left 400ms ease-out, top 250ms ease-in;
+  width: 500px;
+  color: white;
+  background: black;
+  padding: 10px;
+  text-align: justify;
 }
 
 .popover-wrapper:hover .popover-content {

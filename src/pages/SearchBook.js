@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { FaSearch } from "react-icons/fa";
+
 import { searchItem } from "../redux/action";
-import { Link } from "react-router-dom";
 import DisplayList from "../components/DisplayList";
 import "./SearchBook.css";
 import SearchArea from "../components/SearchArea";
+
 class SearchBook extends Component {
   constructor(props) {
     super(props);

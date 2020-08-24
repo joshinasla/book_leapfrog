@@ -16,6 +16,7 @@ export class DisplayBook extends Component {
       headers: {
         "x-rapidapi-host": "google-books.p.rapidapi.com",
         "x-rapidapi-key": "f0f6e3806dbmsh32cb152e5e4ffe7p11e34ajsna1633c3a6b6e",
+        "Access-Control-Allow-Origin": "*",
       },
     })
       .then((res) => {

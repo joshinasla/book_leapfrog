@@ -4,4 +4,10 @@ export const searchItem = (book) => {
     payload: book,
   };
 };
-export default { searchItem };
+export const updateBookShelf = (id) => {
+  return {
+    type: "UPDATE_BOOK",
+    payload: id,
+  };
+};
+export default { searchItem, updateBookShelf };
