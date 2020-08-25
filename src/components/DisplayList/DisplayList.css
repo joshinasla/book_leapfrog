@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+  max-width: 1000px;
 }
 .container {
   width: 300px;

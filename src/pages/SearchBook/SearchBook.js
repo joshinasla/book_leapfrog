@@ -52,6 +52,7 @@ class SearchBook extends Component {
         this.props.sendItem(bookDetails);
       });
   };
+
   render() {
     console.log("this", this.state.bookDetails);
     return (
@@ -76,7 +77,7 @@ class SearchBook extends Component {
         <SearchArea
           searchBook={this.searchBook}
           handleSearch={this.handleSearch}
-          onclick={this.onClick}
+          onclick={this.props.onClick}
         />
         <br />
         <br />
