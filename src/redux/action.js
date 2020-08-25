@@ -5,8 +5,9 @@ export const searchItem = (book) => {
   };
 };
 export const updateBookShelf = (id) => {
+  console.log(id);
   return {
-    type: "UPDATE_BOOK",
+    type: "BOOK_SELECTED",
     payload: id,
   };
 };

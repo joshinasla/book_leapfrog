@@ -76,6 +76,7 @@ class SearchBook extends Component {
         <SearchArea
           searchBook={this.searchBook}
           handleSearch={this.handleSearch}
+          onclick={this.onClick}
         />
         <br />
         <br />

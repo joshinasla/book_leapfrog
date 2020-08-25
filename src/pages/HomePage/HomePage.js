@@ -5,7 +5,20 @@ import NavBar from "../../components/NavBar/NavBar";
 import StaticDisplay from "../../components/DisplayBook";
 import "./HomePage.css";
 
-export class HomePage extends Component {
+class HomePage extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      search_clicked: false,
+    };
+  }
+  onClick = (e) => {
+    this.setState({
+      search_clicked: true,
+    });
+  };
+
   render() {
     return (
       <div className="main-wrapper clearfix">
@@ -13,7 +26,7 @@ export class HomePage extends Component {
           <NavBar />
         </div>
         <div className="search-wrapper">
-          <SearchBook />
+          <SearchBook onClick={this.onClick} />
         </div>
         {/* <div className="container-main">
           {this.state.list.map((list) => (
@@ -38,8 +51,10 @@ export class HomePage extends Component {
               </a>
             </div>
           ))}
+          { showResults ? <Results /> : null }
+          <MyComponent style={this.state.showMyComponent ? {} : { display: 'none' }} />
         </div> */}
-        <StaticDisplay />
+        {this.search_clicked ? null : <StaticDisplay />}
       </div>
     );
   }

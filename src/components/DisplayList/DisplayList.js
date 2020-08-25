@@ -7,7 +7,6 @@ import "./DisplayList.css";
 function DisplayList(props) {
   console.log("he", props.bookDetails);
   const books = props.bookDetails;
-  let book_flag = false;
 
   return (
     <div className="wrapper">
@@ -47,7 +46,7 @@ function DisplayList(props) {
                 </div>
               </div>
               <div>
-                <button onClick={updateBookShelf(book.id, (book_flag = true))}>
+                <button onClick={() => updateBookShelf(book.id)}>
                   My Book
                 </button>
               </div>
@@ -60,13 +59,15 @@ function DisplayList(props) {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    actions: bindActionCreators(
-      { updateBookShelf },
-      dispatch,
-      console.log("dispatchhi")
-    ),
-  };
+  {
+    return {
+      actions: bindActionCreators(
+        { updateBookShelf },
+        dispatch,
+        console.log("dispatchhi")
+      ),
+    };
+  }
 };
 const ReduxDisplayList = connect(null, mapDispatchToProps)(DisplayList);
 export default ReduxDisplayList;

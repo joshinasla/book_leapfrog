@@ -16,7 +16,7 @@ function SearchArea(props) {
             placeholder="Search..."
           />
 
-          <button className="addBtn" type="submit">
+          <button className="addBtn" type="submit" onClick={props.onClick}>
             <FaSearch />
           </button>
         </div>
