@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { searchItem } from "../../redux/action";
-import DisplayList from "../../components/DisplayList/DisplayList";
-import SearchArea from "../../components/SearchArea";
+import DisplayList from "../DisplayList/DisplayList";
+import SearchArea from "../SearchArea";
 import "./SearchBook.css";
 import { Link } from "react-router-dom";
 
@@ -37,7 +37,7 @@ class SearchBook extends Component {
   };
   searchBook = (e) => {
     e.preventDefault();
-    const bookDetailsUrl = `https://www.googleapis.com/books/v1/volumes?q=${this.state.searchField}&maxResults=2`;
+    const bookDetailsUrl = `https://www.googleapis.com/books/v1/volumes?q=${this.state.searchField}&maxResults=3`;
     fetch(bookDetailsUrl)
       .then((res) => {
         console.log({ res });

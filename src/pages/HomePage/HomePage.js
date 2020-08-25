@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import SearchBook from "../SearchBook/SearchBook";
+import SearchBook from "../../components/SearchBook/SearchBook";
 import NavBar from "../../components/NavBar/NavBar";
 import StaticDisplay from "../../components/DisplayBook";
 import "./HomePage.css";

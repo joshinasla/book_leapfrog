@@ -2,7 +2,7 @@ import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import "../pages/SearchBook/SearchBook.css";
+import "./SearchBook/SearchBook.css";
 
 function SearchArea(props) {
   return (

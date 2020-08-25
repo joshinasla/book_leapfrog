@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+
 import { updateBookShelf } from "../../redux/action";
 import "./DisplayList.css";
 
@@ -59,15 +59,9 @@ function DisplayList(props) {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  {
-    return {
-      actions: bindActionCreators(
-        { updateBookShelf },
-        dispatch,
-        console.log("dispatchhi")
-      ),
-    };
-  }
+  return {
+    updateBookShelf: (id) => dispatch(updateBookShelf(id)),
+  };
 };
 const ReduxDisplayList = connect(null, mapDispatchToProps)(DisplayList);
 export default ReduxDisplayList;
