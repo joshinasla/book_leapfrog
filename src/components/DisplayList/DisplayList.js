@@ -46,7 +46,7 @@ function DisplayList(props) {
                 </div>
               </div>
               <div>
-                <button onClick={() => updateBookShelf(book.id)}>
+                <button onClick={() => props.updateBookShelf(book.id)}>
                   My Book
                 </button>
               </div>

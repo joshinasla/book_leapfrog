@@ -4,6 +4,16 @@ import { AiFillCheckCircle } from "react-icons/ai";
 import "./BookItem.css";
 
 class BookItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { read: false };
+  }
+
+  readBtnChange = () => {
+    this.setState({
+      read: !this.state.read,
+    });
+  };
   render() {
     return (
       <li id={this.props.id} className="list-book">
@@ -14,7 +24,9 @@ class BookItem extends Component {
           <div className="icons">
             <div>
               <AiFillCheckCircle aria-hidden="true" />
-              <p>{this.props.read ? "Finished" : "Reading"}</p>
+              <button className="read-btn" onClick={this.readBtnChange}>
+                <p>{this.state.read ? "Finished" : "Reading"}</p>
+              </button>
             </div>
           </div>
         </div>

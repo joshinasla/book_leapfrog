@@ -5,14 +5,11 @@ export const searchItem = (book) => {
   };
 };
 export const updateBookShelf = (id) => {
-  console.log(id);
-  return (
-    {
-      type: "BOOK_SELECTED",
-      payload: id,
-    },
-    console.log("action encoutered", id)
-  );
+  console.log("action", id);
+  return {
+    type: "BOOK_SELECTED",
+    payload: id,
+  };
 };
 
 export default { searchItem, updateBookShelf };

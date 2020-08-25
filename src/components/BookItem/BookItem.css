@@ -34,3 +34,9 @@ li {
 .bookFinished .fa-check-circle {
   color: #fedd31;
 }
+.read-btn {
+  background-color: Transparent;
+  border: none;
+  cursor: pointer;
+  color: aliceblue;
+}
