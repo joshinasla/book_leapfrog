@@ -7,6 +7,7 @@ import DisplayList from "../../components/DisplayList/DisplayList";
 import SearchArea from "../../components/SearchArea";
 import "./SearchBook.css";
 import { Link } from "react-router-dom";
+import NavBar from "../../components/NavBar/NavBar";
 
 class SearchBook extends Component {
   constructor(props) {
@@ -84,22 +85,26 @@ class SearchBook extends Component {
             </Link>
           </div>
         </form> */}
+        <div className="nav-bar-wrapper">
+          <NavBar />
+        </div>
+        <div className="search-area-content">
+          <SearchArea
+            searchBook={this.searchBook}
+            handleSearch={this.handleSearch}
+            onclick={this.setRedirect}
+            renderRedirect={this.renderRedirect}
+          />
+          <br />
+          <br />
+          <br />
+          <br />
 
-        <SearchArea
-          searchBook={this.searchBook}
-          handleSearch={this.handleSearch}
-          onclick={this.setRedirect}
-          renderRedirect={this.renderRedirect}
-        />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <div className="display-list">
-          {this.state.flag && (
-            <DisplayList bookDetails={this.state.bookDetails} />
-          )}
+          <div className="display-list">
+            {this.state.flag && (
+              <DisplayList bookDetails={this.state.bookDetails} />
+            )}
+          </div>
         </div>
       </div>
     );
