@@ -1,14 +1,19 @@
 const initialState = {
-  id: "",
+  bookID: [],
 };
 const activeReducer = (state = initialState, action) => {
   switch (action.type) {
     case "BOOK_SELECTED":
       console.log("reducer", action.payload);
       return {
-        id: action.payload,
+        ...state,
+        bookID: [...state.bookID, action.payload],
       };
-
+    case "UPDATE_BOOK_DETAILS":
+      return {
+        ...state,
+        bookDetails: [...state.bookDetails, action.bookDetails],
+      };
     default:
       return state;
   }

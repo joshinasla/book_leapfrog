@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-import ListBook from "../../components/ListBook";
+import BookItem from "../../components/BookItem/BookItem";
 
-export class MyBooks extends Component {
+class MyBooks extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -60,12 +61,24 @@ export class MyBooks extends Component {
     };
   }
   render() {
+    console.log(this.props.myBooks);
+    const myBooks = this.props.myBooks;
+    // const id = myBooks.id;
     return (
       <div>
-        <ListBook items={this.state.items} />
+        {myBooks.map((bookId) => (
+          <BookItem id={bookId} />
+        ))}
       </div>
     );
   }
 }
+const mapStateToProps = (state) => {
+  console.log("mapStateToProps", state.activeBook.books);
+  return {
+    myBooks: state.activeBook.bookID,
+  };
+};
+const ReduxMyBooks = connect(mapStateToProps)(MyBooks);
 
-export default MyBooks;
+export default ReduxMyBooks;

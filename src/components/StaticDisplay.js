@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class StaticDisplay extends Component {
+class StaticDisplay extends Component {
   constructor(props) {
     super(props);
 

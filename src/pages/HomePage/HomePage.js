@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import SearchBook from "../../components/SearchBook/SearchBook";
+// import SearchBook from "../../components/SearchBook/SearchBook";
 import NavBar from "../../components/NavBar/NavBar";
-import StaticDisplay from "../../components/DisplayBook";
+import StaticDisplay from "../../components/StaticDisplay";
 import "./HomePage.css";
 
 class HomePage extends Component {
@@ -25,9 +25,9 @@ class HomePage extends Component {
         <div className="nav-bar-wrapper">
           <NavBar />
         </div>
-        <div className="search-wrapper">
-          <SearchBook onClick={this.onClick} />
-        </div>
+        {/* <div className="search-wrapper">
+          <SearchBook />
+        </div> */}
         {/* <div className="container-main">
           {this.state.list.map((list) => (
             <div className="container">

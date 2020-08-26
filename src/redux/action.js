@@ -11,5 +11,11 @@ export const updateBookShelf = (id) => {
     payload: id,
   };
 };
-
-export default { searchItem, updateBookShelf };
+export const updateBookDetails = (bookDetails) => {
+  console.log("bookDetailsss");
+  return {
+    type: "UPDATE_BOOK_DETAILS",
+    bookDetails: bookDetails,
+  };
+};
+export default { searchItem, updateBookShelf, updateBookDetails };

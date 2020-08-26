@@ -1,9 +1,8 @@
 .wrapper {
-  display: flex;
-  max-width: 1000px;
 }
 .container {
-  width: 300px;
+  width: 500px;
+  height: 300px;
   left: 50%;
   max-height: 400px;
   background-color: #1b1b1e;
@@ -11,6 +10,7 @@
   margin: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  display: inline-block;
 }
 .container:hover {
   box-shadow: 0 8px 16px 0 rgba(194, 169, 68, 1);
@@ -30,6 +30,7 @@
 }
 .cover {
   padding: 10px;
+  display: inline-flex;
 }
 .img-box {
   float: left;
@@ -38,9 +39,10 @@
   font-size: 18px;
   font-weight: bold;
   float: right;
+  padding-left: 15px;
 }
 .title {
-  width: 150px;
+  width: 350px;
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -48,15 +50,15 @@
 }
 .author {
   font-weight: 600;
-  width: 100px;
+  width: 300px;
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .categories {
-  width: 100px;
-
+  max-width: 300px;
+  display: inline;
   background-color: #58a4b0;
   border-radius: 10px;
   padding: 5px;
@@ -73,7 +75,37 @@
   float: none;
   line-height: 20px;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background-color: Transparent;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  padding: 20px;
+  transition: all 0.5s;
 }
+.popover-title span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.popover-title span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.popover-title:hover span {
+  padding-right: 25px;
+}
+.popover-title:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 .popover-wrapper {
   float: left;
 }
@@ -106,4 +138,11 @@ a {
 
 .see-more-text {
   float: right;
+}
+
+.lower-content {
+  padding: 0 10px;
+}
+.my-book-btn {
+  margin-left: 45%;
 }

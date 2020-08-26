@@ -18,8 +18,7 @@
 }
 .container-main {
   margin-top: 10%;
-  display: grid;
-  justify-content: center;
+  margin-left: 10%;
 }
 .content-text {
   color: white;

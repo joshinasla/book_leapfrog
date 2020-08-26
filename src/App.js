@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 
 import store from "./redux/store";
 import DisplayBook from "./pages/HomePage/HomePage";
-
+import SearchBook from "./pages/SearchBook/SearchBook";
 import DisplayList from "./components/DisplayList/DisplayList";
 import MyBooks from "./pages/MyBooks/MyBooks";
 
@@ -15,7 +15,7 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={DisplayBook}></Route>
-            {/* <Route exact path="/search" component={SearchBook}></Route> */}
+            <Route exact path="/search" component={SearchBook}></Route>
             <Route exact path="/list" component={DisplayList}></Route>
             <Route exact path="/mybook" component={MyBooks}></Route>
           </Switch>

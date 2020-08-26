@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 import { searchItem } from "../../redux/action";
-import DisplayList from "../DisplayList/DisplayList";
-import SearchArea from "../SearchArea";
+import DisplayList from "../../components/DisplayList/DisplayList";
+import SearchArea from "../../components/SearchArea";
 import "./SearchBook.css";
 import { Link } from "react-router-dom";
 
@@ -15,6 +16,7 @@ class SearchBook extends Component {
       bookDetails: [],
       searchField: "hi",
       flag: false,
+      redirect: false,
     };
   }
 
@@ -52,7 +54,16 @@ class SearchBook extends Component {
         this.props.sendItem(bookDetails);
       });
   };
-
+  setRedirect = () => {
+    this.setState({
+      redirect: true,
+    });
+  };
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to="/find" />;
+    }
+  };
   render() {
     console.log("this", this.state.bookDetails);
     return (
@@ -77,7 +88,8 @@ class SearchBook extends Component {
         <SearchArea
           searchBook={this.searchBook}
           handleSearch={this.handleSearch}
-          onclick={this.props.onClick}
+          onclick={this.setRedirect}
+          renderRedirect={this.renderRedirect}
         />
         <br />
         <br />

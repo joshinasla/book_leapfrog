@@ -16,6 +16,11 @@ function NavBar() {
           MY BOOK
         </Link>
       </span>
+      <span className="nav-bar-content">
+        <Link to="/search" className="nav-bar-content-link">
+          SEARCH
+        </Link>
+      </span>
     </div>
   );
 }
