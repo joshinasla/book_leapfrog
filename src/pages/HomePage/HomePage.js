@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-// import SearchBook from "../../components/SearchBook/SearchBook";
+import SearchBook from "../SearchBook/SearchBook";
 import NavBar from "../../components/NavBar/NavBar";
 import StaticDisplay from "../../components/StaticDisplay";
 import "./HomePage.css";
@@ -14,20 +14,19 @@ class HomePage extends Component {
     };
   }
   onClick = (e) => {
+    console.log("onclick encountered");
     this.setState({
       search_clicked: true,
     });
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="main-wrapper clearfix">
-        <div className="nav-bar-wrapper">
-          <NavBar />
+        <div className="search-wrapper">
+          <SearchBook onclick={this.onClick} />
         </div>
-        {/* <div className="search-wrapper">
-          <SearchBook />
-        </div> */}
         {/* <div className="container-main">
           {this.state.list.map((list) => (
             <div className="container">
@@ -54,7 +53,7 @@ class HomePage extends Component {
           { showResults ? <Results /> : null }
           <MyComponent style={this.state.showMyComponent ? {} : { display: 'none' }} />
         </div> */}
-        {this.search_clicked ? null : <StaticDisplay />}
+        {this.state.search_clicked ? null : <StaticDisplay />}
       </div>
     );
   }

@@ -37,7 +37,6 @@ class BookItem extends Component {
   };
   render() {
     const bookDetail = this.props.book;
-    // const singleItem = this.state.singleItem;
 
     console.log("THISis inside render", bookDetail);
     return (
@@ -63,19 +62,7 @@ class BookItem extends Component {
               </div>
             </div>
           </a>
-          {/* {<h2>{bookDetail.selfLink}</h2>}
-            {<h2>{bookDetail.volumeInfo.title}</h2>} */}
-          {/* <h2>{bookDe.id}</h2>
-        <h1>{this.state.singleItem.selfLink}</h1> */}
-          {/* <h1>
-          {Object.keys(this.state.singleItem.volumeInfo).map((key) => {
-            return <li key={key}>{}</li>;
-          })}
-        </h1> */}
-          {/* <div className="container">
-          <h2>{bookDetail.volumeInfo.title}</h2>
-          <p>{bookDetail.volumeInfo.author}</p>
-*/}
+
           <div className="icons">
             <div>
               <AiFillCheckCircle aria-hidden="true" />
@@ -89,17 +76,5 @@ class BookItem extends Component {
     );
   }
 }
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     updateBookDetails: (bookDetails) =>
-//       dispatch(updateBookDetails(bookDetails)),
-//   };
-// };
-// const mapStateToProps = (state) => {
-//   console.log("this is inside props", state.active.bookDetails);
-//   return {
-//     bookDetail: state.activeBook.bookDetails,
-//   };
-// };
-// const ReduxBookItem = connect(mapStateToProps, mapDispatchToProps)(BookItem);
+
 export default BookItem;

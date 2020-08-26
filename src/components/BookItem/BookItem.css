@@ -1,9 +1,11 @@
 li {
   list-style: none;
 }
+
 .main {
   padding-top: 100px;
 }
+
 .list-book {
   display: flex;
   justify-content: center;
@@ -12,30 +14,38 @@ li {
 .title-my-book {
   text-align: center;
 }
+
 .icons {
   display: flex;
   align-items: center;
 }
+
 .icons div {
   margin-right: 50px;
   display: flex;
   align-items: center;
 }
+
 .icons div .fa {
   margin-right: 20px;
 }
+
 .bookToBeRead {
   border-right: 3px solid blueviolet;
 }
+
 .bookToBeRead .fa-bookmark {
   color: blueviolet;
 }
+
 .bookFinished {
   border-right: 3px solid #fedd31;
 }
+
 .bookFinished .fa-check-circle {
   color: #fedd31;
 }
+
 .read-btn {
   background-color: Transparent;
   border: none;

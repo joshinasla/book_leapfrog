@@ -6,8 +6,7 @@ import { searchItem } from "../../redux/action";
 import DisplayList from "../../components/DisplayList/DisplayList";
 import SearchArea from "../../components/SearchArea";
 import "./SearchBook.css";
-import { Link } from "react-router-dom";
-import NavBar from "../../components/NavBar/NavBar";
+// import LoadingIndicator from "../../components/LoadingIndicator";
 
 class SearchBook extends Component {
   constructor(props) {
@@ -39,12 +38,18 @@ class SearchBook extends Component {
     this.setState({ searchField: e.target.value });
   };
   searchBook = (e) => {
+    this.props.onclick();
+    console.log("searchbook");
     e.preventDefault();
-    const bookDetailsUrl = `https://www.googleapis.com/books/v1/volumes?q=${this.state.searchField}&maxResults=3`;
+    const bookDetailsUrl = `https://www.googleapis.com/books/v1/volumes?q=${this.state.searchField}&maxResults=10`;
     fetch(bookDetailsUrl)
       .then((res) => {
-        console.log({ res });
-        return res.json();
+        if (res.status === 200) {
+          console.log({ res });
+          return res.json();
+        } else if (res.status === 408) {
+          console.log("SOMETHING WENT WRONG");
+        }
       })
       .then((bookDetails) => {
         console.log("hi", { bookDetails });
@@ -69,40 +74,20 @@ class SearchBook extends Component {
     console.log("this", this.state.bookDetails);
     return (
       <div>
-        {/* <form className="searchform" onSubmit={this.addSearch}>
-          <div className="searchBox">
-            <input
-              className="searchbox"
-              type="text"
-              value={this.state.book}
-              onChange={this.handleChange}
-              placeholder="Search..."
-            />
-            <Link to="/list">
-              <button className="addBtn" type="submit">
-                <FaSearch />
-              </button>
-            </Link>
-          </div>
-        </form> */}
-        {/* <div className="nav-bar-wrapper">
-          <NavBar />
-        </div> */}
         <div className="search-area-content">
           <SearchArea
             searchBook={this.searchBook}
             handleSearch={this.handleSearch}
-            onclick={this.setRedirect}
+            onclick={this.props.onclick}
             renderRedirect={this.renderRedirect}
           />
           <br />
           <br />
           <br />
           <br />
-
           <div className="display-list">
             {this.state.flag && (
-              <DisplayList bookDetails={this.state.bookDetails} />
+              <DisplayList bookDetails={this.props.myBooks.items} />
             )}
           </div>
         </div>
@@ -110,6 +95,7 @@ class SearchBook extends Component {
     );
   }
 }
+
 const mapDispatchToProps = (dispatch) => {
   return {
     sendItem: (book) => {
@@ -118,5 +104,16 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const ReduxSearchBook = connect(null, mapDispatchToProps)(SearchBook);
+const mapStateToProps = (state) => {
+  console.log("stateto props", state.search.value);
+  return {
+    myBooks: state.search.value,
+  };
+};
+
+const ReduxSearchBook = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchBook);
+
 export default ReduxSearchBook;

@@ -15,7 +15,7 @@ function SearchArea(props) {
             onChange={props.handleSearch}
             placeholder="Search..."
           />
-          {props.renderRedirect()}
+          {/* {props.renderRedirect()} */}
           <button className="addBtn" type="submit" onClick={props.onClick}>
             <FaSearch />
           </button>
