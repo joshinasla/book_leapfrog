@@ -85,9 +85,9 @@ class SearchBook extends Component {
             </Link>
           </div>
         </form> */}
-        <div className="nav-bar-wrapper">
+        {/* <div className="nav-bar-wrapper">
           <NavBar />
-        </div>
+        </div> */}
         <div className="search-area-content">
           <SearchArea
             searchBook={this.searchBook}

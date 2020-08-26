@@ -13,23 +13,22 @@ class BookItem extends Component {
       read: false,
     };
   }
-  componentWillMount() {
-    const bookID = this.props.id;
-    const bookDetailUrl = `https://www.googleapis.com/books/v1/volumes/${bookID}`;
-    fetch(bookDetailUrl)
-      .then((res) => {
-        console.log({ res });
-        return res.json();
-      })
-      .then((bookDetails) => {
-        console.log({ bookDetails });
-        // this.props.updateBookDetails(bookDetails);
-        this.setState({
-          singleItem: bookDetails,
-        });
-        console.log("singleItem", this.state.singleItem);
-      });
-  }
+  // componentWillMount() {
+  //   const book = this.props.book;
+  //   const bookDetailUrl = `https://www.googleapis.com/books/v1/volumes/${bookID}`;
+  //   fetch(bookDetailUrl)
+  //     .then((res) => {
+  //       console.log({ res });
+  //       return res.json();
+  //     })
+  //     .then((bookDetails) => {
+  //       console.log({ bookDetails });
+  //       this.props.updateBookDetails(bookDetails);
+  //       this.setState({
+  //         singleItem: bookDetails,
+  //       });
+  //     });
+  // }
 
   readBtnChange = () => {
     this.setState({
@@ -37,23 +36,46 @@ class BookItem extends Component {
     });
   };
   render() {
-    const bookDetail = this.props.bookDetails;
-    const singleItem = this.state.singleItem;
+    const bookDetail = this.props.book;
+    // const singleItem = this.state.singleItem;
 
     console.log("THISis inside render", bookDetail);
     return (
-      <li id={this.state.singleItem.id} className="list-book">
-        <h2>{this.state.singleItem.id}</h2>
-        <h1>{this.state.singleItem.selfLink}</h1>
-        {/* <h1>
+      <li id={bookDetail.id} className="list-book">
+        <div className="container">
+          <a href={bookDetail.previewLink} className="content-text">
+            <div className="cover">
+              <div className="clearfix header">
+                <div className="img-box">
+                  <img
+                    src={bookDetail.volumeInfo.imageLinks.thumbnail}
+                    width="100px"
+                    alt="book cover"
+                  ></img>
+                </div>
+                <div className="content">
+                  <p className="title">{bookDetail.volumeInfo.title}</p>
+                  <p className="author">{bookDetail.volumeInfo.authors}</p>
+                  <p className="categories">
+                    {bookDetail.volumeInfo.categories}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+          {/* {<h2>{bookDetail.selfLink}</h2>}
+            {<h2>{bookDetail.volumeInfo.title}</h2>} */}
+          {/* <h2>{bookDe.id}</h2>
+        <h1>{this.state.singleItem.selfLink}</h1> */}
+          {/* <h1>
           {Object.keys(this.state.singleItem.volumeInfo).map((key) => {
             return <li key={key}>{}</li>;
           })}
         </h1> */}
-        {/* <div className="container">
+          {/* <div className="container">
           <h2>{bookDetail.volumeInfo.title}</h2>
           <p>{bookDetail.volumeInfo.author}</p>
-
+*/}
           <div className="icons">
             <div>
               <AiFillCheckCircle aria-hidden="true" />
@@ -62,7 +84,7 @@ class BookItem extends Component {
               </button>
             </div>
           </div>
-        </div> */}
+        </div>
       </li>
     );
   }

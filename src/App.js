@@ -7,12 +7,15 @@ import DisplayBook from "./pages/HomePage/HomePage";
 import SearchBook from "./pages/SearchBook/SearchBook";
 import DisplayList from "./components/DisplayList/DisplayList";
 import MyBooks from "./pages/MyBooks/MyBooks";
-
+import NavBar from "./components/NavBar/NavBar";
 function App() {
   return (
     <div className="App">
       <Provider store={store}>
         <BrowserRouter>
+          <div className="nav-bar-wrapper">
+            <NavBar />
+          </div>
           <Switch>
             <Route exact path="/" component={DisplayBook}></Route>
             <Route exact path="/search" component={SearchBook}></Route>

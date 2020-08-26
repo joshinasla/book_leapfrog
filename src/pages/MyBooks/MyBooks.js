@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import NavBar from "../../components/NavBar/NavBar";
 import BookItem from "../../components/BookItem/BookItem";
+import "../../components/BookItem/BookItem.css";
 
 class MyBooks extends Component {
   constructor(props) {
@@ -65,9 +67,9 @@ class MyBooks extends Component {
     const myBooks = this.props.myBooks;
     // const id = myBooks.id;
     return (
-      <div>
-        {myBooks.map((bookId) => (
-          <BookItem id={bookId} />
+      <div className="main">
+        {myBooks.map((book) => (
+          <BookItem book={book} />
         ))}
       </div>
     );
