@@ -16,7 +16,7 @@ class MyBooks extends Component {
           <BookItem book={book} />
         ))}
         {myBooks.length === 0 && (
-          <span className="no-book">No books available..</span>
+          <span className="no-book">Sorry!! No books available..</span>
         )}
       </div>
     );

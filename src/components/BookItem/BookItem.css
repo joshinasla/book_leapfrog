@@ -4,6 +4,7 @@ li {
 
 .main {
   padding-top: 100px;
+  text-align: center;
 }
 
 .list-book {
@@ -65,6 +66,7 @@ li {
 
 .icons {
   float: left;
+  margin-left: 15px;
 }
 
 .read-btn {
@@ -85,10 +87,21 @@ a {
 .your-list {
   text-align: center;
   text-decoration-line: underline;
+  margin-bottom: 100px;
 }
 
 .no-book {
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  display: inline;
+  background: #373f51;
+  padding: 25px 40px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: medium;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.no-book:hover {
+  box-shadow: 0 8px 16px 0 rgba(194, 169, 68, 1);
 }
