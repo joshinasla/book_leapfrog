@@ -39,7 +39,6 @@ class SearchBook extends Component {
         }
       })
       .then((bookDetails) => {
-        console.log("hi", { bookDetails });
         this.setState({
           bookDetails: bookDetails.items,
           flag: true,
@@ -81,7 +80,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log("stateto props", state.search.value);
   return {
     myBooks: state.search.value,
   };

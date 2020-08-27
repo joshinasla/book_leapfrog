@@ -6,7 +6,6 @@ import "./DisplayList.css";
 import bookcover from "../../asset/bookcover.jpg";
 
 function DisplayList(props) {
-  console.log("he", props.bookDetails);
   const books = props.bookDetails || [];
 
   return (

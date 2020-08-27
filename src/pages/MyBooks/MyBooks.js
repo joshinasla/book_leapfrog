@@ -6,7 +6,6 @@ import "../../components/BookItem/BookItem.css";
 
 class MyBooks extends Component {
   render() {
-    console.log("hi", this.props.myBooks);
     const myBooks = this.props.myBooks;
 
     return (

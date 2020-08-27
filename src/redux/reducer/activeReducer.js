@@ -5,7 +5,6 @@ const initialState = {
 const activeReducer = (state = initialState, action) => {
   switch (action.type) {
     case "BOOK_SELECTED":
-      console.log("reducer", action.payload);
       return {
         ...state,
         bookID: [...state.bookID, action.payload],

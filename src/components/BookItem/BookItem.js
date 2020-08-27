@@ -21,7 +21,6 @@ class BookItem extends Component {
 
   render() {
     const bookDetail = this.props.book;
-    console.log("THISis inside render", bookDetail);
 
     return (
       <div>

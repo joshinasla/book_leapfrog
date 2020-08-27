@@ -14,7 +14,6 @@ class HomePage extends Component {
   }
 
   onClick = (e) => {
-    console.log("onclick encountered");
     this.setState({
       search_clicked: true,
     });

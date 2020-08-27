@@ -14,11 +14,9 @@ class StaticDisplay extends Component {
       "https://8b4cd5e1-a1e8-47d8-a3fe-09f7daca171c.mock.pstmn.io/book";
     fetch(displayUrl)
       .then((res) => {
-        console.log(res);
         return res.json();
       })
       .then((displayList) => {
-        console.log({ displayList });
         this.setState({ list: displayList });
       });
   }
