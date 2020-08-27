@@ -1,5 +1,5 @@
 .wrapper {
-  width: 80%;
+  margin-left: 12%;
 }
 .container {
   width: 500px;
@@ -166,7 +166,7 @@ a {
 }
 
 .my-book-btn {
-  margin-left: 45%;
+  margin-left: 70%;
   background-color: #d8dbe2;
   color: #373f51;
   font-weight: 600;
@@ -174,4 +174,5 @@ a {
   border-radius: 5px;
   border: none;
   margin-bottom: 5px;
+  cursor: pointer;
 }

@@ -75,7 +75,7 @@ function DisplayList(props) {
                 className="my-book-btn"
                 onClick={() => props.updateBookShelf(book)}
               >
-                My Book
+                Add To My Book
               </button>
             </div>
           </div>

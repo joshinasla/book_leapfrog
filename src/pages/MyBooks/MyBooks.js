@@ -25,11 +25,13 @@ class MyBooks extends Component {
     // }
     return (
       <div className="main">
-        <h1> Your List</h1>
+        <h1 className="your-list"> Your List</h1>
         {myBooks.map((book) => (
           <BookItem book={book} />
         ))}
-        {myBooks.length == 0 && <span>No books available</span>}
+        {myBooks.length == 0 && (
+          <span className="no-book">No books available..</span>
+        )}
       </div>
     );
   }
