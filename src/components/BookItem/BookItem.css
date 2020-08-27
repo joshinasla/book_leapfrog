@@ -74,12 +74,14 @@ li {
 a {
   color: white;
 }
+
 .read-btn {
   text-decoration: none;
   font-weight: 800;
   padding-right: 10px;
   color: white;
 }
+
 .your-list {
   text-align: center;
   text-decoration-line: underline;

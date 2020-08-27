@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 import SearchBook from "../SearchBook/SearchBook";
 import StaticDisplay from "../../components/StaticDisplay";

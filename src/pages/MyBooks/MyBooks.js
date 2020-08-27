@@ -5,31 +5,17 @@ import BookItem from "../../components/BookItem/BookItem";
 import "../../components/BookItem/BookItem.css";
 
 class MyBooks extends Component {
-  constructor(props) {
-    super(props);
-    // this.state = {
-    //   iflag: true,
-    // };
-  }
-  // hi = () => {
-  //   this.setState({
-  //     iflag: false,
-  //   });
-  //   console.log(this.state.flag, "hi");
-  // };
   render() {
     console.log("hi", this.props.myBooks);
     const myBooks = this.props.myBooks;
-    // if (this.props.mybooks === undefined) {
-    //   this.hi();
-    // }
+
     return (
       <div className="main">
         <h1 className="your-list"> Your List</h1>
         {myBooks.map((book) => (
           <BookItem book={book} />
         ))}
-        {myBooks.length == 0 && (
+        {myBooks.length === 0 && (
           <span className="no-book">No books available..</span>
         )}
       </div>
