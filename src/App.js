@@ -8,6 +8,8 @@ import SearchBook from "./pages/SearchBook/SearchBook";
 import DisplayList from "./components/DisplayList/DisplayList";
 import MyBooks from "./pages/MyBooks/MyBooks";
 import NavBar from "./components/NavBar/NavBar";
+import "./App.css";
+
 function App() {
   return (
     <div className="App">
@@ -19,7 +21,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={DisplayBook}></Route>
             <Route exact path="/search" component={SearchBook}></Route>
-            <Route exact path="/list" component={DisplayList}></Route>
+            {/* <Route exact path="/list" component={DisplayList}></Route> */}
             <Route exact path="/mybook" component={MyBooks}></Route>
           </Switch>
         </BrowserRouter>

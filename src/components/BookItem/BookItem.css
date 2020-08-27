@@ -52,3 +52,28 @@ li {
   cursor: pointer;
   color: aliceblue;
 }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.icons {
+  float: left;
+}
+
+.read-btn {
+  float: right;
+}
+
+.read-btn {
+  text-decoration: none;
+  font-weight: 800;
+  padding-right: 10px;
+  color: white;
+}

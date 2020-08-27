@@ -4,6 +4,7 @@ export const searchItem = (book) => {
     payload: book,
   };
 };
+
 export const updateBookShelf = (id) => {
   console.log("action", id);
   return {
@@ -11,6 +12,7 @@ export const updateBookShelf = (id) => {
     payload: id,
   };
 };
+
 export const updateBookDetails = (bookDetails) => {
   console.log("bookDetailsss");
   return {
@@ -18,4 +20,5 @@ export const updateBookDetails = (bookDetails) => {
     bookDetails: bookDetails,
   };
 };
+
 export default { searchItem, updateBookShelf, updateBookDetails };

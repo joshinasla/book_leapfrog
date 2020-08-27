@@ -1,6 +1,5 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 import "../pages/SearchBook/SearchBook.css";
 
@@ -15,8 +14,7 @@ function SearchArea(props) {
             onChange={props.handleSearch}
             placeholder="Search..."
           />
-          {/* {props.renderRedirect()} */}
-          <button className="addBtn" type="submit" onClick={props.onClick}>
+          <button className="addBtn" type="submit">
             <FaSearch />
           </button>
         </div>

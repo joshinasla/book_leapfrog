@@ -1,6 +1,7 @@
 const initialState = {
   bookID: [],
 };
+
 const activeReducer = (state = initialState, action) => {
   switch (action.type) {
     case "BOOK_SELECTED":
@@ -18,4 +19,5 @@ const activeReducer = (state = initialState, action) => {
       return state;
   }
 };
+
 export default activeReducer;

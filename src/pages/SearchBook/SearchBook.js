@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
 
 import { searchItem } from "../../redux/action";
 import DisplayList from "../../components/DisplayList/DisplayList";
 import SearchArea from "../../components/SearchArea";
 import "./SearchBook.css";
-// import LoadingIndicator from "../../components/LoadingIndicator";
+import { withRouter } from "react-router";
 
 class SearchBook extends Component {
   constructor(props) {
@@ -20,23 +19,11 @@ class SearchBook extends Component {
     };
   }
 
-  // handleChange = (e) => {
-  //   this.setState({
-  //     book: e.target.value,
-  //   });
-  // };
-  // addSearch = (e) => {
-  //   e.preventDefault();
-  //   const searchBook = this.state.book;
-  //   this.props.sendItem(searchBook);
-
-  //   this.setState({
-  //     book: "",
-  //   });
-  // };
   handleSearch = (e) => {
+    this.props.history.push("?search=" + e.target.value);
     this.setState({ searchField: e.target.value });
   };
+
   searchBook = (e) => {
     this.props.onclick();
     console.log("searchbook");
@@ -60,16 +47,7 @@ class SearchBook extends Component {
         this.props.sendItem(bookDetails);
       });
   };
-  setRedirect = () => {
-    this.setState({
-      redirect: true,
-    });
-  };
-  renderRedirect = () => {
-    if (this.state.redirect) {
-      return <Redirect to="/find" />;
-    }
-  };
+
   render() {
     console.log("this", this.state.bookDetails);
     return (
@@ -78,8 +56,6 @@ class SearchBook extends Component {
           <SearchArea
             searchBook={this.searchBook}
             handleSearch={this.handleSearch}
-            onclick={this.props.onclick}
-            renderRedirect={this.renderRedirect}
           />
           <br />
           <br />
@@ -116,4 +92,4 @@ const ReduxSearchBook = connect(
   mapDispatchToProps
 )(SearchBook);
 
-export default ReduxSearchBook;
+export default withRouter(ReduxSearchBook);

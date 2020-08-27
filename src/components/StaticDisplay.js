@@ -12,15 +12,7 @@ class StaticDisplay extends Component {
   componentWillMount() {
     const displayUrl =
       "https://8b4cd5e1-a1e8-47d8-a3fe-09f7daca171c.mock.pstmn.io/book";
-    //const token = f6e3806dbmsh32cb152e5e4ffe7p11e34ajsna1633c3a6b6e;
     fetch(displayUrl)
-      //   headers: {
-      //     "x-rapidapi-host": "google-books.p.rapidapi.com",
-      //     "x-rapidapi-key": "f0f6e3806dbmsh32cb152e5e4ffe7p11e34ajsna1633c3a6b6e",
-      //     // "Access-Control-Allow-Origin": "*",
-      //   },
-      // }
-
       .then((res) => {
         console.log(res);
         return res.json();
@@ -30,6 +22,7 @@ class StaticDisplay extends Component {
         this.setState({ list: displayList });
       });
   }
+
   render() {
     return (
       <div>

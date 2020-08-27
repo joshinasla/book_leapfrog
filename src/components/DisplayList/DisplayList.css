@@ -1,8 +1,8 @@
 .wrapper {
+  width: 80%;
 }
 .container {
   width: 500px;
-
   left: 50%;
   max-height: 400px;
   background-color: #1b1b1e;
@@ -12,9 +12,11 @@
   border-radius: 5px;
   display: inline-block;
 }
+
 .container:hover {
   box-shadow: 0 8px 16px 0 rgba(194, 169, 68, 1);
 }
+
 .header {
   display: inline;
 }
@@ -28,20 +30,24 @@
 .clearfix:after {
   clear: both;
 }
+
 .cover {
   padding: 10px;
   display: inline-flex;
   height: 160px;
 }
+
 .img-box {
   float: left;
 }
+
 .content {
   font-size: 18px;
   font-weight: bold;
   float: right;
   padding-left: 15px;
 }
+
 .title {
   width: 350px;
   text-align: left;
@@ -49,6 +55,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .author {
   font-weight: 600;
   width: 300px;
@@ -57,6 +64,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .categories {
   max-width: 300px;
   display: inline;
@@ -67,6 +75,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .pop-title {
   text-decoration: none;
   color: #dcedff;
@@ -85,12 +94,14 @@
   padding: 20px;
   transition: all 0.5s;
 }
+
 .popover-title span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
+
 .popover-title span:after {
   content: "\00bb";
   position: absolute;
@@ -99,9 +110,11 @@
   right: -20px;
   transition: 0.5s;
 }
+
 .popover-title:hover span {
   padding-right: 25px;
 }
+
 .popover-title:hover span:after {
   opacity: 1;
   right: 0;
@@ -110,6 +123,7 @@
 .popover-wrapper {
   float: left;
 }
+
 .popover-content {
   position: absolute;
   z-index: 1;
@@ -123,6 +137,7 @@
   overflow: auto;
   height: 100px;
 }
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -136,6 +151,7 @@
   text-decoration: none;
   color: white;
 }
+
 a {
   text-decoration: none;
 }
@@ -148,6 +164,7 @@ a {
 .lower-content {
   padding: 0 10px;
 }
+
 .my-book-btn {
   margin-left: 45%;
   background-color: #d8dbe2;

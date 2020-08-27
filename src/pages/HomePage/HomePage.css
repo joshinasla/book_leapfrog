@@ -15,8 +15,14 @@
 }
 
 .container-main {
-  margin-top: 10%;
-  margin-left: 10%;
+  left: 50%;
+}
+@media (min-width: 1333px) {
+  .container-main {
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
 .content-text {
   color: white;

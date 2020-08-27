@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { updateBookShelf } from "../../redux/action";
 import "./DisplayList.css";
-import logo192 from "./logo192.png";
+import bookcover from "../../asset/bookcover.jpg";
 
 function DisplayList(props) {
   console.log("he", props.bookDetails);
@@ -25,10 +25,9 @@ function DisplayList(props) {
                       alt="book cover "
                     />
                   ) : (
-                    <img src={logo192} width="100px" alt="book cover" />
+                    <img src={bookcover} width="100px" alt="book cover" />
                   )}
                 </div>
-
                 <div className="content">
                   {book.volumeInfo.title ? (
                     <p className="title">{book.volumeInfo.title}</p>
@@ -94,4 +93,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const ReduxDisplayList = connect(null, mapDispatchToProps)(DisplayList);
+
 export default ReduxDisplayList;
