@@ -13,7 +13,7 @@ class SearchBook extends Component {
 
     this.state = {
       bookDetails: [],
-      searchField: "hi",
+      searchField: "hello world",
       flag: false,
       redirect: false,
     };

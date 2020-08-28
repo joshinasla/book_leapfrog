@@ -58,7 +58,8 @@
 }
 
 .author {
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   width: 300px;
   text-align: left;
   overflow: hidden;
@@ -75,6 +76,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .pop-title {

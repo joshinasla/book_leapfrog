@@ -84,6 +84,9 @@ function DisplayList(props) {
           </div>
         );
       })}
+      {books.length === 0 && (
+        <span className="no-book">PLEASE Enter valid Name</span>
+      )}
     </div>
   );
 }
