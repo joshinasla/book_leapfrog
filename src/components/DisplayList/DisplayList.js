@@ -64,7 +64,11 @@ function DisplayList(props) {
                 <div className="popover-wrapper" />
               )}
               <div className="see-more-text">
-                <a href={book.volumeInfo.previewLink}>
+                <a
+                  href={book.volumeInfo.previewLink}
+                  target="_blank"
+                  onclick="window.open({book.volumeInfo.prewviewLink},'name','width=600,height=400')"
+                >
                   <h5 className="description">See More...</h5>
                 </a>
               </div>

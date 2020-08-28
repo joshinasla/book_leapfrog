@@ -16,6 +16,7 @@
 
 .container-main {
   left: 50%;
+  text-align: center;
 }
 @media (min-width: 1333px) {
   .container-main {

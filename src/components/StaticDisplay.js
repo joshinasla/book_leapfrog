@@ -27,7 +27,12 @@ class StaticDisplay extends Component {
         <div className="container-main">
           {this.state.list.map((list) => (
             <div className="container">
-              <a href={list.previewLink} className="content-text">
+              <a
+                href={list.previewLink}
+                target="_blank"
+                onclick="window.open({list.prewviewLink},'name','width=600,height=400')"
+                className="content-text"
+              >
                 <div className="cover">
                   <div className="clearfix header">
                     <div className="img-box">

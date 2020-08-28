@@ -75,6 +75,8 @@ class BookItem extends Component {
               <div className="read-btn">
                 <a
                   href={bookDetail.volumeInfo.previewLink}
+                  target="_blank"
+                  onclick="window.open({bookDetail.volumeInfo.previewLink},'name','width=600,height=400')"
                   className="preview-Link"
                 >
                   READ
